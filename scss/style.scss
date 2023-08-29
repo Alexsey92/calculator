@@ -1,0 +1,130 @@
+@font-face {
+	font-family: 'Calculator';
+	src: url(/src/fonts/Calculator.ttf);
+}
+
+
+.calculator {
+	margin-top: 50px;
+	&_container {
+		background: linear-gradient(140deg, rgba(0, 0, 0, 1) 0%, rgba(230, 215, 215, 1) 24%, rgba(203, 196, 196, 1) 39%, rgba(89, 89, 89, 1) 63%, rgba(120, 120, 120, 1) 86%);
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		border: 2px solid black;
+		border-radius: 10px;
+		padding: 20px 10px;
+		margin: 0 auto;
+		width: auto;
+		max-width: 400px;
+		
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+
+	&_screen {
+		background-color: #fff;
+		width: 330px;
+		height: 70px;
+		border: 1px solid black;
+		border-radius: 10px;
+		font-size: 55px;
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		font-family: 'Calculator';
+	}
+
+	&_buttons {
+		display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			:last-child{
+				grid-column-start: -2;
+				grid-row-start: 3;
+				grid-row-end: 5;
+			}
+	}
+}
+
+.button {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	font-weight: 600;
+	border: 1px solid black;
+	border-radius: 10px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	color: #2687f7;
+	font-size: 20px;
+	transition: transform 0.15s;
+		transform-style: preserve-3d;
+		@media (any-hover: hover){
+			&:hover{
+				background: #dbdbdb;
+				
+				&::before{
+					
+						transform: translate3d(0, 0.35em, -1em)
+				}
+			}
+		}
+		&:active{
+			background: #f0f0f0;
+			transform: translate(0em, 0.35em);
+			&::before{
+				box-shadow: 0 0 0 1px #949394, 0 0 #c0c0c0;
+				transform: translate3d(0, 0, -1em);
+			}
+		}
+		&::before{
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: #2c2c2c;
+				border-radius: inherit;
+				box-shadow: 0 0 0 1px #ececec;
+				transform: translate3d(0, 0.35em, -1em);
+				transition: transform 0.15s, box-shadow 0.15s;
+				
+		}
+}
+
+.button-number {
+
+}
+
+.button-sign {
+		background-color: #c9c6c6;
+		
+}
+.button-symbol {
+}
+.button-muth {
+		background-color: #bbbbbb;}
+
+.button-clear {
+	color: white;
+	background-color: #ff0606;
+}
+
+.button-result {
+	//width: auto;
+	height: 100%;
+	color: white;
+		background-color: #065dff;
+}
