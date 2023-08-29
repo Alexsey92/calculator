@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (num > 9999999999999) { //перевірка на максимальне число
 			return 'Max number'
 		}
-		if (num < (-999999999999)) {//перевірка на мінімальне число
+		if (num < (-9999999999999)) {//перевірка на мінімальне число
 			return 'Min number'
 		}
 		if (str.length > 13) {	//обробка до потрібного знака після точки
